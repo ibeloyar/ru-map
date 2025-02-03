@@ -1,0 +1,72 @@
+{
+  "name": "ru-map",
+  "private": false,
+  "version": "0.0.1",
+  "description": "A library containing a map component of Russia with the ability to choose: region, district or time zone",
+  "keywords": ["ru-map", "timezone", "ru-timezone", "map", "svg"],
+  "author": "ibeloyar<beloyar.dev@outlook.com>",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "npm@10.9.0",
+  "engines": {
+    "node": ">=20.8.1"
+  },
+  "main": "./lib/fir-vue.umd.js",
+  "module": "./lib/fir-vue.es.js",
+  "exports": {
+    ".": {
+      "types": "./lib/main.d.ts",
+      "import": "./lib/fir-vue.es.js",
+      "require": "./lib/fir-vue.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.19.0",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "11.0.1",
+    "@types/node": "22.13.0",
+    "eslint": "9.19.0",
+    "semantic-release": "24.2.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.22.0",
+    "vite": "6.0.11",
+    "vite-plugin-dts": "4.5.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "repositoryUrl": "git@github.com:ibeloyar/ru-map.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package-lock.json",
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  }
+}

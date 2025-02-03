@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ru map</title>
+
+    <style>
+        .container {
+            max-width: 1024px;
+            max-height: 600px;
+        }
+        .controls{
+            display: flex;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="controls">
+            <label for="ru-map-mode-select">Mode</label>
+            <select id="ru-map-mode-select" name="ru-map-mode-select">
+                <option selected value="region">region</option>
+                <option value="federal_district">federal_district</option>
+                <option value="timezone">timezone</option>
+            </select>
+
+            <label for="ru-map-locale-select">Locale</label>
+            <select id="ru-map-locale-select" name="ru-map-locale-select">
+                <option selected value="ru">ru</option>
+                <option value="en">en</option>
+            </select>
+        </section>
+
+        <div id="ru-map-root" class="map"></div>
+    </main>
+        
+    <script type="module" src="./src/preview.ts"></script>
+</body>
+</html>
