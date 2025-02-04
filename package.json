@@ -17,13 +17,13 @@
   "engines": {
     "node": ">=20.8.1"
   },
-  "main": "./lib/fir-vue.umd.js",
-  "module": "./lib/fir-vue.es.js",
+  "main": "./lib/ru-map.umd.js",
+  "module": "./lib/ru-map.es.js",
   "exports": {
     ".": {
       "types": "./lib/main.d.ts",
-      "import": "./lib/fir-vue.es.js",
-      "require": "./lib/fir-vue.umd.js"
+      "import": "./lib/ru-map.es.js",
+      "require": "./lib/ru-map.umd.js"
     }
   },
   "files": [

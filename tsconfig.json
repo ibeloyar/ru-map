@@ -3,7 +3,7 @@
       "allowJs": true,
       "declaration": true,
       "emitDeclarationOnly": true,
-      "outDir": "./dist",
+      "outDir": "./lib",
       "moduleResolution": "node",
       "target": "ESNext",
       "module": "ESNext",
@@ -11,7 +11,7 @@
       "forceConsistentCasingInFileNames": true,
       "noFallthroughCasesInSwitch": true,
       "useDefineForClassFields": true,
-      "declarationDir": "dist",
+      "declarationDir": "lib",
       "rootDir": "./src",
       "typeRoots": [
         "./node_modules/@types",

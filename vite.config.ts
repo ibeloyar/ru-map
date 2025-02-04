@@ -9,7 +9,7 @@ export default defineConfig({
             fileName: (format) => `ru-map.${format}.js`,
             formats: ['es', 'umd'],
         },
-        outDir: './dist',
+        outDir: './lib',
     },
     plugins: [
         dts({
