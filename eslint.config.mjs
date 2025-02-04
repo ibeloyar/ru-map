@@ -9,10 +9,18 @@ export default tseslint.config(
     {
         name: 'files-to-lint',
         rules: {
+            indent: ['error', 4],
             semi: ['error', 'always'], 
             quotes: [ 'error', 'single' ],
-            indent: ['error', 4],
-        }
+            'comma-dangle': ['error', {
+                'arrays': 'never',
+                'objects': 'always',
+                'imports': 'never',
+                'exports': 'never',
+                'functions': 'never',
+            }],
+            'object-curly-spacing': ['error', 'always'],
+        },
     },
     {
         name: 'files-to-ignore',
@@ -21,7 +29,7 @@ export default tseslint.config(
             '**/dist-ssr/**', 
             '**/coverage/**', 
             '**/lib/**', 
-            '**/*.d.ts',
+            '**/*.d.ts'
         ],
     }
 );

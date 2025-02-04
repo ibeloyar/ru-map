@@ -1,7 +1,11 @@
+import { Region } from './RUMap';
 import { RUMap, type Mode, type Locale } from './main';
 
 function start() {
-    const map = new RUMap('ru-map-root', { mode: 'region' });
+    const map = new RUMap('ru-map-root', { 
+        mode: 'region',
+        onRegionClick: (value: Region) => console.log(value),
+    });
 
     const selectMode = document.getElementById('ru-map-mode-select');
     const selectLocale = document.getElementById('ru-map-locale-select');
