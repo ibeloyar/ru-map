@@ -26,7 +26,7 @@ export enum TZ {
     PETT = 'PETT',
 }
 
-export interface Region {
+export interface RegionItem {
     title: {
         ru: string;
         en: string;
@@ -111,7 +111,7 @@ export const dict: Dict = {
     FEFD: {
         ru: 'Дальневосточный федеральный округ',
         en: 'Far Eastern federal dfistrict',
-    }
+    },
 };
 
 export const districts: Record<FD, string[]> = {
@@ -119,17 +119,17 @@ export const districts: Record<FD, string[]> = {
     [FD.CFD]: [
         'RU-BEL', 'RU-BRY', 'RU-VLA', 'RU-VOR', 'RU-IVA', 'RU-KLU',
         'RU-KOS', 'RU-KRS', 'RU-LIP', 'RU-MOS', 'RU-ORL', 'RU-RYA',
-        'RU-SMO', 'RU-TAM', 'RU-TVE', 'RU-TUL', 'RU-YAR', 'RU-MOW',
+        'RU-SMO', 'RU-TAM', 'RU-TVE', 'RU-TUL', 'RU-YAR', 'RU-MOW'
     ],
     [FD.NWFD]: [
         'RU-ARK', 'RU-VLG', 'RU-KGD', 'RU-KR', 'RU-KO', 'RU-LEN',
-        'RU-MUR', 'RU-NEN', 'RU-NGR', 'RU-PSK', 'RU-SPE',
+        'RU-MUR', 'RU-NEN', 'RU-NGR', 'RU-PSK', 'RU-SPE'
     ],
     [FD.SFD]: [
-        'RU-AD', 'RU-AST', 'RU-VGG', 'RU-KL', 'RU-KDA', 'RU-ROS', 'RU-CR', 'RU-SEV',
+        'RU-AD', 'RU-AST', 'RU-VGG', 'RU-KL', 'RU-KDA', 'RU-ROS', 'RU-CR', 'RU-SEV'
     ],
     [FD.NCFD]: [
-        'RU-DA', 'RU-IN', 'RU-KB', 'RU-KC', 'RU-SE', 'RU-STA', 'RU-CE',
+        'RU-DA', 'RU-IN', 'RU-KB', 'RU-KC', 'RU-SE', 'RU-STA', 'RU-CE'
     ],
     [FD.PFD]: [
         'RU-BA', 'RU-KIR', 'RU-ME', 'RU-CU', 'RU-MO', 'RU-NIZ', 
@@ -137,15 +137,15 @@ export const districts: Record<FD, string[]> = {
         'RU-UD', 'RU-ULY'
     ],
     [FD.UFD]: [
-        'RU-YAN', 'RU-KHM', 'RU-TYU', 'RU-KGN', 'RU-SVE', 'RU-CHE',
+        'RU-YAN', 'RU-KHM', 'RU-TYU', 'RU-KGN', 'RU-SVE', 'RU-CHE'
     ],
     [FD.SBFD]: [
         'RU-AL', 'RU-ALT', 'RU-IRK', 'RU-KEM', 'RU-KYA', 
-        'RU-NVS', 'RU-OMS', 'RU-TOM', 'RU-TY', 'RU-KK',
+        'RU-NVS', 'RU-OMS', 'RU-TOM', 'RU-TY', 'RU-KK'
     ],
     [FD.FEFD]: [
         'RU-AMU', 'RU-BU', 'RU-YEV', 'RU-ZAB', 'RU-KAM', 'RU-MAG', 
-        'RU-PRI', 'RU-SA', 'RU-SAK', 'RU-KHA', 'RU-CHU',
+        'RU-PRI', 'RU-SA', 'RU-SAK', 'RU-KHA', 'RU-CHU'
     ],
 };
 
@@ -167,14 +167,14 @@ export const timezones: Record<TZ, string[]> = {
     [TZ.YAKT]: ['RU-SA', 'RU-AMU', 'RU-ZAB'],
     [TZ.VLAT]: ['RU-PRI', 'RU-KHA'],
     [TZ.MAGT]: ['RU-MAG', 'RU-SAK'],
-    [TZ.PETT]: ['RU-KAM', 'RU-CHU']
+    [TZ.PETT]: ['RU-KAM', 'RU-CHU'],
 };
 
-export const regions: Record<string, Region> = {
+export const regions: Record<string, RegionItem> = {
     'RU-BEL': {
         title: {
             ru: 'Белгородская область',
-            en: 'Belgorod region'
+            en: 'Belgorod region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -182,7 +182,7 @@ export const regions: Record<string, Region> = {
     'RU-BRY': {
         title: {
             ru: 'Брянская область',
-            en: 'Bryansk region'
+            en: 'Bryansk region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -190,7 +190,7 @@ export const regions: Record<string, Region> = {
     'RU-VLA': {
         title: {
             ru: 'Владимирская область',
-            en: 'Vladimir region'
+            en: 'Vladimir region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -198,7 +198,7 @@ export const regions: Record<string, Region> = {
     'RU-VOR': {
         title: {
             ru: 'Воронежская область',
-            en: 'Voronezh region'
+            en: 'Voronezh region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -206,7 +206,7 @@ export const regions: Record<string, Region> = {
     'RU-IVA': {
         title: {
             ru: 'Ивановская область',
-            en: 'Ivanovo region'
+            en: 'Ivanovo region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -214,7 +214,7 @@ export const regions: Record<string, Region> = {
     'RU-KLU': {
         title: {
             ru: 'Калужская область',
-            en: 'Kaluga region'
+            en: 'Kaluga region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -222,7 +222,7 @@ export const regions: Record<string, Region> = {
     'RU-KOS': {
         title: {
             ru: 'Костромская область',
-            en: 'Kostroma region'
+            en: 'Kostroma region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -230,7 +230,7 @@ export const regions: Record<string, Region> = {
     'RU-KRS': {
         title: {
             ru: 'Курская область',
-            en: 'Kursk region'
+            en: 'Kursk region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -238,7 +238,7 @@ export const regions: Record<string, Region> = {
     'RU-LIP': {
         title: {
             ru: 'Липецкая область',
-            en: 'Lipetsk region'
+            en: 'Lipetsk region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -246,7 +246,7 @@ export const regions: Record<string, Region> = {
     'RU-MOS': {
         title: {
             ru: 'Московская область',
-            en: 'Moscow region'
+            en: 'Moscow region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -254,7 +254,7 @@ export const regions: Record<string, Region> = {
     'RU-ORL': {
         title: {
             ru: 'Орловская область',
-            en: 'Oryol region'
+            en: 'Oryol region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -262,7 +262,7 @@ export const regions: Record<string, Region> = {
     'RU-RYA': {
         title: {
             ru: 'Рязанская область',
-            en: 'Ryazan region'
+            en: 'Ryazan region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -270,7 +270,7 @@ export const regions: Record<string, Region> = {
     'RU-SMO': {
         title: {
             ru: 'Смоленская область',
-            en: 'Smolensk region'
+            en: 'Smolensk region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -278,7 +278,7 @@ export const regions: Record<string, Region> = {
     'RU-TAM': {
         title: {
             ru: 'Тамбовская область',
-            en: 'Tambov region'
+            en: 'Tambov region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -286,7 +286,7 @@ export const regions: Record<string, Region> = {
     'RU-TVE': {
         title: {
             ru: 'Тверская область',
-            en: 'Tver region'
+            en: 'Tver region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -294,7 +294,7 @@ export const regions: Record<string, Region> = {
     'RU-TUL': {
         title: {
             ru: 'Тульская область',
-            en: 'Tula region'
+            en: 'Tula region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -302,7 +302,7 @@ export const regions: Record<string, Region> = {
     'RU-YAR': {
         title: {
             ru: 'Ярославская область',
-            en: 'Yaroslavl region'
+            en: 'Yaroslavl region',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -310,7 +310,7 @@ export const regions: Record<string, Region> = {
     'RU-MOW': {
         title: {
             ru: 'Москва',
-            en: 'Moscow'
+            en: 'Moscow',
         },
         fd: FD.CFD,
         tz: TZ.MSK,
@@ -318,7 +318,7 @@ export const regions: Record<string, Region> = {
     'RU-ARK': {
         title: {
             ru: 'Архангельская область',
-            en: 'Arkhangelsk region'
+            en: 'Arkhangelsk region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -326,7 +326,7 @@ export const regions: Record<string, Region> = {
     'RU-VLG': {
         title: {
             ru: 'Вологодская область',
-            en: 'Vologda region'
+            en: 'Vologda region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -334,7 +334,7 @@ export const regions: Record<string, Region> = {
     'RU-KGD': {
         title: {
             ru: 'Калининградская область',
-            en: 'Kaliningrad region'
+            en: 'Kaliningrad region',
         },
         fd: FD.NWFD,
         tz: TZ.KALT,
@@ -342,7 +342,7 @@ export const regions: Record<string, Region> = {
     'RU-KR': {
         title: {
             ru: 'Республика Карелия',
-            en: 'Republic of Karelia'
+            en: 'Republic of Karelia',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -350,7 +350,7 @@ export const regions: Record<string, Region> = {
     'RU-KO': {
         title: {
             ru: 'Республика Коми',
-            en: 'Komi Republic'
+            en: 'Komi republic',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -358,7 +358,7 @@ export const regions: Record<string, Region> = {
     'RU-LEN': {
         title: {
             ru: 'Ленинградская область',
-            en: 'Leningrad region'
+            en: 'Leningrad region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -366,7 +366,7 @@ export const regions: Record<string, Region> = {
     'RU-MUR': {
         title: {
             ru: 'Мурманская область',
-            en: 'Murmansk region'
+            en: 'Murmansk region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -374,7 +374,7 @@ export const regions: Record<string, Region> = {
     'RU-NEN': {
         title: {
             ru: 'Ненецкий автономный округ',
-            en: 'Nenets Autonomous Okrug'
+            en: 'Nenets autonomous okrug',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -382,7 +382,7 @@ export const regions: Record<string, Region> = {
     'RU-NGR': {
         title: {
             ru: 'Новгородская область',
-            en: 'Novgorod region'
+            en: 'Novgorod region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -390,7 +390,7 @@ export const regions: Record<string, Region> = {
     'RU-PSK': {
         title: {
             ru: 'Псковская область',
-            en: 'Pskov region'
+            en: 'Pskov region',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -398,7 +398,7 @@ export const regions: Record<string, Region> = {
     'RU-SPE': {
         title: {
             ru: 'Санкт-Петербург',
-            en: 'Saint Petersburg'
+            en: 'Saint Petersburg',
         },
         fd: FD.NWFD,
         tz: TZ.MSK,
@@ -406,7 +406,7 @@ export const regions: Record<string, Region> = {
     'RU-AD': {
         title: {
             ru: 'Республика Адыгея',
-            en: 'Republic of Adygea'
+            en: 'Republic of Adygea',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -414,7 +414,7 @@ export const regions: Record<string, Region> = {
     'RU-AST': {
         title: {
             ru: 'Астраханская область',
-            en: 'Astrakhan region'
+            en: 'Astrakhan region',
         },
         fd: FD.SFD,
         tz: TZ.SAMT,
@@ -422,7 +422,7 @@ export const regions: Record<string, Region> = {
     'RU-VGG': {
         title: {
             ru: 'Волгоградская область',
-            en: 'Volgograd region'
+            en: 'Volgograd region',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -430,7 +430,7 @@ export const regions: Record<string, Region> = {
     'RU-KL': {
         title: {
             ru: 'Республика Калмыкия',
-            en: 'Republic of Kalmykia'
+            en: 'Republic of Kalmykia',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -438,7 +438,7 @@ export const regions: Record<string, Region> = {
     'RU-KDA': {
         title: {
             ru: 'Краснодарский край',
-            en: 'Krasnodar Krai'
+            en: 'Krasnodar krai',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -446,7 +446,7 @@ export const regions: Record<string, Region> = {
     'RU-ROS': {
         title: {
             ru: 'Ростовская область',
-            en: 'Rostov region'
+            en: 'Rostov region',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -454,7 +454,7 @@ export const regions: Record<string, Region> = {
     'RU-CR': {
         title: {
             ru: 'Республика Крым',
-            en: 'Republic of Crimea'
+            en: 'Republic of Crimea',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -462,7 +462,7 @@ export const regions: Record<string, Region> = {
     'RU-SEV': {
         title: {
             ru: 'Севастополь',
-            en: 'Sevastopol'
+            en: 'Sevastopol',
         },
         fd: FD.SFD,
         tz: TZ.MSK,
@@ -470,7 +470,7 @@ export const regions: Record<string, Region> = {
     'RU-DA': {
         title: {
             ru: 'Республика Дагестан',
-            en: 'Republic of Dagestan'
+            en: 'Republic of Dagestan',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -478,15 +478,15 @@ export const regions: Record<string, Region> = {
     'RU-IN': {
         title: {
             ru: 'Республика Ингушетия',
-            en: 'Republic of Ingushetia'
+            en: 'Republic of Ingushetia',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
     },
     'RU-KB': {
         title: {
-            ru: 'Кабардино-Балкарская Республика',
-            en: 'Kabardino-Balkarian Republic'
+            ru: 'Кабардино-Балкарская республика',
+            en: 'Kabardino-Balkarian republic',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -494,7 +494,7 @@ export const regions: Record<string, Region> = {
     'RU-KC': {
         title: {
             ru: 'Карачаево-Черкесская Республика',
-            en: 'Karachay-Cherkess Republic'
+            en: 'Karachay-Cherkess republic',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -502,7 +502,7 @@ export const regions: Record<string, Region> = {
     'RU-SE': {
         title: {
             ru: 'Республика Северная Осетия',
-            en: 'Republic of North Ossetia'
+            en: 'Republic of North Ossetia',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -510,7 +510,7 @@ export const regions: Record<string, Region> = {
     'RU-STA': {
         title: {
             ru: 'Ставропольский край',
-            en: 'Stavropol Krai'
+            en: 'Stavropol krai',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -518,7 +518,7 @@ export const regions: Record<string, Region> = {
     'RU-CE': {
         title: {
             ru: 'Чеченская Республика',
-            en: 'Chechen Republic'
+            en: 'Chechen republic',
         },
         fd: FD.NCFD,
         tz: TZ.MSK,
@@ -526,7 +526,7 @@ export const regions: Record<string, Region> = {
     'RU-BA': {
         title: {
             ru: 'Республика Башкортостан',
-            en: 'Republic of Bashkortostan'
+            en: 'Republic of Bashkortostan',
         },
         fd: FD.PFD,
         tz: TZ.YEKT,
@@ -534,7 +534,7 @@ export const regions: Record<string, Region> = {
     'RU-KIR': {
         title: {
             ru: 'Кировская область',
-            en: 'Kirov region'
+            en: 'Kirov region',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -542,7 +542,7 @@ export const regions: Record<string, Region> = {
     'RU-ME': {
         title: {
             ru: 'Республика Марий Эл',
-            en: 'Republic of Mari El'
+            en: 'Republic of Mari El',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -550,7 +550,7 @@ export const regions: Record<string, Region> = {
     'RU-MO': {
         title: {
             ru: 'Республика Мордовия',
-            en: 'Republic of Mordovia'
+            en: 'Republic of Mordovia',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -558,7 +558,7 @@ export const regions: Record<string, Region> = {
     'RU-NIZ': {
         title: {
             ru: 'Нижегородская область',
-            en: 'Nizhny Novgorod region'
+            en: 'Nizhny Novgorod region',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -566,7 +566,7 @@ export const regions: Record<string, Region> = {
     'RU-ORE': {
         title: {
             ru: 'Оренбургская область',
-            en: 'Orenburg region'
+            en: 'Orenburg region',
         },
         fd: FD.PFD,
         tz: TZ.YEKT,
@@ -574,7 +574,7 @@ export const regions: Record<string, Region> = {
     'RU-PNZ': {
         title: {
             ru: 'Пензенская область',
-            en: 'Penza region'
+            en: 'Penza region',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -582,7 +582,7 @@ export const regions: Record<string, Region> = {
     'RU-PER': {
         title: {
             ru: 'Пермский край',
-            en: 'Perm Krai'
+            en: 'Perm krai',
         },
         fd: FD.PFD,
         tz: TZ.YEKT,
@@ -590,7 +590,7 @@ export const regions: Record<string, Region> = {
     'RU-SAM': {
         title: {
             ru: 'Самарская область',
-            en: 'Samara region'
+            en: 'Samara region',
         },
         fd: FD.PFD,
         tz: TZ.SAMT,
@@ -598,7 +598,7 @@ export const regions: Record<string, Region> = {
     'RU-SAR': {
         title: {
             ru: 'Саратовская область',
-            en: 'Saratov region'
+            en: 'Saratov region',
         },
         fd: FD.PFD,
         tz: TZ.SAMT,
@@ -606,7 +606,7 @@ export const regions: Record<string, Region> = {
     'RU-TA': {
         title: {
             ru: 'Республика Татарстан',
-            en: 'Republic of Tatarstan'
+            en: 'Republic of Tatarstan',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -614,7 +614,7 @@ export const regions: Record<string, Region> = {
     'RU-UD': {
         title: {
             ru: 'Удмуртская Республика',
-            en: 'Udmurt Republic'
+            en: 'Udmurt republic',
         },
         fd: FD.PFD,
         tz: TZ.SAMT,
@@ -622,7 +622,7 @@ export const regions: Record<string, Region> = {
     'RU-ULY': {
         title: {
             ru: 'Ульяновская область',
-            en: 'Ulyanovsk region'
+            en: 'Ulyanovsk region',
         },
         fd: FD.PFD,
         tz: TZ.SAMT,
@@ -630,7 +630,7 @@ export const regions: Record<string, Region> = {
     'RU-CU': {
         title: {
             ru: 'Чувашская Республика',
-            en: 'Chuvash Republic'
+            en: 'Chuvash republic',
         },
         fd: FD.PFD,
         tz: TZ.MSK,
@@ -638,7 +638,7 @@ export const regions: Record<string, Region> = {
     'RU-KGN': {
         title: {
             ru: 'Курганская область',
-            en: 'Kurgan region'
+            en: 'Kurgan region',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -646,7 +646,7 @@ export const regions: Record<string, Region> = {
     'RU-SVE': {
         title: {
             ru: 'Свердловская область',
-            en: 'Sverdlovsk region'
+            en: 'Sverdlovsk region',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -654,7 +654,7 @@ export const regions: Record<string, Region> = {
     'RU-TYU': {
         title: {
             ru: 'Тюменская область',
-            en: 'Tyumen region'
+            en: 'Tyumen region',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -662,7 +662,7 @@ export const regions: Record<string, Region> = {
     'RU-KHM': {
         title: {
             ru: 'Ханты-Мансийский автономный округ',
-            en: 'Khanty-Mansi Autonomous Okrug'
+            en: 'Khanty-Mansi autonomous okrug',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -670,7 +670,7 @@ export const regions: Record<string, Region> = {
     'RU-CHE': {
         title: {
             ru: 'Челябинская область',
-            en: 'Chelyabinsk region'
+            en: 'Chelyabinsk region',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -678,7 +678,7 @@ export const regions: Record<string, Region> = {
     'RU-YAN': {
         title: {
             ru: 'Ямало-Ненецкий автономный округ',
-            en: 'Yamalo-Nenets Autonomous Okrug'
+            en: 'Yamalo-Nenets autonomous okrug',
         },
         fd: FD.UFD,
         tz: TZ.YEKT,
@@ -686,7 +686,7 @@ export const regions: Record<string, Region> = {
     'RU-AL': {
         title: {
             ru: 'Республика Алтай',
-            en: 'Altai Republic'
+            en: 'Altai republic',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -694,7 +694,7 @@ export const regions: Record<string, Region> = {
     'RU-ALT': {
         title: {
             ru: 'Алтайский край',
-            en: 'Altai Krai'
+            en: 'Altai krai',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -702,7 +702,7 @@ export const regions: Record<string, Region> = {
     'RU-IRK': {
         title: {
             ru: 'Иркутская область',
-            en: 'Irkutsk region'
+            en: 'Irkutsk region',
         },
         fd: FD.SBFD,
         tz: TZ.IRKT,
@@ -710,7 +710,7 @@ export const regions: Record<string, Region> = {
     'RU-KEM': {
         title: {
             ru: 'Кемеровская область – Кузбасс',
-            en: 'Kemerovo region – Kuzbass'
+            en: 'Kemerovo region – Kuzbass',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -718,7 +718,7 @@ export const regions: Record<string, Region> = {
     'RU-KYA': {
         title: {
             ru: 'Красноярский край',
-            en: 'Krasnoyarsk Krai'
+            en: 'Krasnoyarsk krai',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -726,7 +726,7 @@ export const regions: Record<string, Region> = {
     'RU-NVS': {
         title: {
             ru: 'Новосибирская область',
-            en: 'Novosibirsk region'
+            en: 'Novosibirsk region',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -734,7 +734,7 @@ export const regions: Record<string, Region> = {
     'RU-OMS': {
         title: {
             ru: 'Омская область',
-            en: 'Omsk region'
+            en: 'Omsk region',
         },
         fd: FD.SBFD,
         tz: TZ.OMST,
@@ -742,7 +742,7 @@ export const regions: Record<string, Region> = {
     'RU-TOM': {
         title: {
             ru: 'Томская область',
-            en: 'Tomsk region'
+            en: 'Tomsk region',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -750,7 +750,7 @@ export const regions: Record<string, Region> = {
     'RU-TY': {
         title: {
             ru: 'Республика Тыва',
-            en: 'Tuva Republic'
+            en: 'Tuva republic',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -758,7 +758,7 @@ export const regions: Record<string, Region> = {
     'RU-KK': {
         title: {
             ru: 'Республика Хакасия',
-            en: 'Republic of Khakassia'
+            en: 'Republic of Khakassia',
         },
         fd: FD.SBFD,
         tz: TZ.KRAT,
@@ -766,7 +766,7 @@ export const regions: Record<string, Region> = {
     'RU-AMU': {
         title: {
             ru: 'Амурская область',
-            en: 'Amur region'
+            en: 'Amur region',
         },
         fd: FD.FEFD,
         tz: TZ.YAKT,
@@ -774,7 +774,7 @@ export const regions: Record<string, Region> = {
     'RU-BU': {
         title: {
             ru: 'Республика Бурятия',
-            en: 'Republic of Buryatia'
+            en: 'Republic of Buryatia',
         },
         fd: FD.FEFD,
         tz: TZ.IRKT,
@@ -782,7 +782,7 @@ export const regions: Record<string, Region> = {
     'RU-YEV': {
         title: {
             ru: 'Еврейская автономная область',
-            en: 'Jewish Autonomous Oblast'
+            en: 'Jewish autonomous oblast',
         },
         fd: FD.FEFD,
         tz: TZ.YAKT,
@@ -790,7 +790,7 @@ export const regions: Record<string, Region> = {
     'RU-ZAB': {
         title: {
             ru: 'Забайкальский край',
-            en: 'Zabaykalsky Krai'
+            en: 'Zabaykalsky krai',
         },
         fd: FD.FEFD,
         tz: TZ.YAKT,
@@ -798,7 +798,7 @@ export const regions: Record<string, Region> = {
     'RU-KAM': {
         title: {
             ru: 'Камчатский край',
-            en: 'Kamchatka Krai'
+            en: 'Kamchatka krai',
         },
         fd: FD.FEFD,
         tz: TZ.PETT,
@@ -806,7 +806,7 @@ export const regions: Record<string, Region> = {
     'RU-MAG': {
         title: {
             ru: 'Магаданская область',
-            en: 'Magadan region'
+            en: 'Magadan region',
         },
         fd: FD.FEFD,
         tz: TZ.MAGT,
@@ -814,7 +814,7 @@ export const regions: Record<string, Region> = {
     'RU-PRI': {
         title: {
             ru: 'Приморский край',
-            en: 'Primorsky Krai'
+            en: 'Primorsky krai',
         },
         fd: FD.FEFD,
         tz: TZ.VLAT,
@@ -822,7 +822,7 @@ export const regions: Record<string, Region> = {
     'RU-SA': {
         title: {
             ru: 'Республика Саха',
-            en: 'Sakha Republic'
+            en: 'Sakha republic',
         },
         fd: FD.FEFD,
         tz: TZ.YAKT,
@@ -830,7 +830,7 @@ export const regions: Record<string, Region> = {
     'RU-SAK': {
         title: {
             ru: 'Сахалинская область',
-            en: 'Sakhalin region'
+            en: 'Sakhalin region',
         },
         fd: FD.FEFD,
         tz: TZ.MAGT,
@@ -838,7 +838,7 @@ export const regions: Record<string, Region> = {
     'RU-KHA': {
         title: {
             ru: 'Хабаровский край',
-            en: 'Khabarovsk Krai'
+            en: 'Khabarovsk krai',
         },
         fd: FD.FEFD,
         tz: TZ.VLAT,
@@ -846,7 +846,7 @@ export const regions: Record<string, Region> = {
     'RU-CHU': {
         title: {
             ru: 'Чукотский автономный округ',
-            en: 'Chukotka Autonomous Okrug'
+            en: 'Chukotka autonomous okrug',
         },
         fd: FD.FEFD,
         tz: TZ.PETT,
