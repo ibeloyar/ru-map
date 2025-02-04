@@ -1,9 +1,15 @@
 {
   "name": "ru-map",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A library containing a map component of Russia with the ability to choose: region, district or time zone",
-  "keywords": ["ru-map", "timezone", "ru-timezone", "map", "svg"],
+  "keywords": [
+    "ru-map",
+    "timezone",
+    "ru-timezone",
+    "map",
+    "svg"
+  ],
   "author": "ibeloyar<beloyar.dev@outlook.com>",
   "license": "MIT",
   "type": "module",
