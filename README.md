@@ -25,7 +25,7 @@ Contains an svg map of Russia, with the following capabilities:
 ## Table of contents
 - [Getting started](#Getting-started)
     - [Native](#Native)
-    - [React](#deploy-и-ci/cd)
+    - [React](#React)
     - [Interface Region](#Interface-Region)
 - [Development](#Development)
 - [Contributing](#Contributing)
