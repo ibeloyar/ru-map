@@ -1,4 +1,4 @@
-import { Region } from './RUMap';
+import { Region } from './rumap/RUMap';
 import { RUMap, type Mode, type Locale } from './main';
 
 function start() {

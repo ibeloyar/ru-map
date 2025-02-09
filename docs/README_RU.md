@@ -20,12 +20,22 @@ Cодержит в себе svg карту России, с возможност
 2) Выбора федерального округа
 3) Выбора часового пояса (с инфорамцией о разнице с UTC+0 в минутах)
 
-![Image](./Preview.png)
+![Image](./preview.png)
+
+## Содержание
+- [Начало работы](#Начало-работы)
+    - [Нативное использование](#Нативное-использование)
+    - [React](#deploy-и-ci/cd)
+    - [Интерфейс Region](#Интерфейс-Region)
+- [Разработка](#Разработка)
+- [Вклад в развитие](#Вклад-в-развитие)
 
 ## Начало работы
+
+### Нативное использование
 Установите npm-пакет с помощью команды:
 ```sh
-$ npm i ru-map
+npm i ru-map
 ```
 
 И добавьте в свой проект:
@@ -42,6 +52,45 @@ const map = new RUMap(idRootHTMLElement, {
     }, 
 });
 ```
+
+### React
+Установите npm-пакет с помощью команды:
+```sh
+npm i ru-map
+```
+
+И добавьте в свой проект:
+```tsx
+import { RUMap, Mode } from 'ru-map';
+import { useEffect, useRef } from 'react';
+
+export const Exaple = () => {
+    const mapRef = useRef<RUMap | null>();
+
+    // If you need outside control
+    const changeMode = (mode: Mode) => {
+        mapRef.current?.setMode(mode);
+    };
+
+    useEffect(() => {
+        mapRef.current = new RUMap('ru-map-id', {
+            mode: 'region',
+            locale: 'en',
+            onRegionClick: (value: Region) => {
+                // your code here
+            }, 
+        });
+    }, []);
+
+    return (
+        <>
+            <div id="ru-map-id" />
+        </>
+    );
+};
+```
+
+### Интерфейс Region
 Интерфейс региона содержит:
 ```typescript
 export interface Region {
