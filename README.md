@@ -20,12 +20,22 @@ Contains an svg map of Russia, with the following capabilities:
 2) Selecting of the federal district
 3) Selecting a time zone (with information about the difference from UTC+0 in minutes)
 
-![Image](./docs/Preview.png)
+![Image](./docs/preview.png)
+
+## Table of contents
+- [Getting started](#Getting-started)
+    - [Native](#Native)
+    - [React](#React)
+    - [Interface Region](#Interface-Region)
+- [Development](#Development)
+- [Contributing](#Contributing)
 
 ## Getting started
+
+### Native
 Install npm package using command:
 ```sh
-$ npm i ru-map
+npm i ru-map
 ```
 
 And add to your project:
@@ -42,14 +52,52 @@ const map = new RUMap(idRootHTMLElement, {
     }, 
 });
 ```
+
+### React
+Install npm package using command:
+```sh
+npm i ru-map
+```
+
+```tsx
+import { RUMap, Mode } from 'ru-map';
+import { useEffect, useRef } from 'react';
+
+export const Exaple = () => {
+    const mapRef = useRef<RUMap | null>();
+
+    // If you need outside control
+    const changeMode = (mode: Mode) => {
+        mapRef.current?.setMode(mode);
+    };
+
+    useEffect(() => {
+        mapRef.current = new RUMap('ru-map-id', {
+            mode: 'region',
+            locale: 'en',
+            onRegionClick: (value: Region) => {
+                // your code here
+            }, 
+        });
+    }, []);
+
+    return (
+        <>
+            <div id="ru-map-id" />
+        </>
+    );
+};
+```
+
+### Interface Region
 The region interface contains:
 ```typescript
 export interface Region {
-    id: string; // region id
-    title: string; // region name 'en' || 'ru'
-    federalDistrict: string; // district of region 'en' || 'ru'
-    timezone: string; // region time zone 'en' || 'ru'
-    timezoneOffset: number; // offset from UTC+0 in minutes
+    id: string; // id региона
+    title: string; // Имя региона  'en' || 'ru'
+    federalDistrict: string; // Округ региона 'en' || 'ru'
+    timezone: string; // Часовой пояс региона 'en' || 'ru'
+    timezoneOffset: number; // Смещение от UTC+0 в минутах
 }
 ```
 
