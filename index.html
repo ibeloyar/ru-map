@@ -14,6 +14,10 @@
             display: flex;
             gap: 12px;
         }
+        .selected_region {
+            min-height: 200px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -32,8 +36,10 @@
                 <option value="en">en</option>
             </select>
         </section>
-
+        
         <div id="ru-map-root" class="map"></div>
+
+        <pre class="selected_region" id="ru-map-selected-regeon"></pre>
     </main>
         
     <script type="module" src="./src/preview.ts"></script>
