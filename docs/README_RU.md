@@ -27,6 +27,7 @@ Cодержит в себе svg карту России, с возможност
     - [Нативное использование](#Нативное-использование)
     - [React](#React)
     - [Интерфейс Region](#Интерфейс-Region)
+    - [Насторйки RUMap](#Насторйки-RUMap)
 - [Разработка](#Разработка)
 - [Вклад в развитие](#Вклад-в-развитие)
 
@@ -49,7 +50,7 @@ const map = new RUMap(idRootHTMLElement, {
     locale: 'en',
     onRegionClick: (value: Region) => {
         // your code here
-    }, 
+    },
 });
 ```
 
@@ -101,6 +102,22 @@ export interface Region {
     timezoneOffset: number; // Смещение от UTC+0 в минутах
 }
 ```
+
+### Насторйки RUMap
+Конструктор, вторым параметром принимает следующие настройки:
+```typescript
+export interface RUMapSettings {
+    mode: Mode; // режим работы
+    locale?: Locale; // язык локалиизации
+    selectedID?: string; // выбраный регион по-умолчанию
+    mapClassName?: string; // имя класса для карты
+    tooltipClassName?: string; // имя класса для подсказки
+    onRegionClick?: (value: Region) => void; // обработчик клика по региону
+}
+```
+> [!IMPORTANT]
+> Наличие класса tooltipClassName, отключает стилизацуию всплывающей подсказки по-умолчанию
+
 
 ## Разработка
 

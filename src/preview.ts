@@ -16,6 +16,7 @@ function start() {
     const map = new RUMap('ru-map-root', { 
         mode: 'region',
         onRegionClick: onRegionClick,
+        tooltipClassName: 'test_class_for_tooltip',
     });
 
     if (selectMode) {

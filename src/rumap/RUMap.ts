@@ -22,12 +22,15 @@ export interface Region {
 
 export interface RUMapSettings {
     mode: Mode;
-    selectedID?: string;
     locale?: Locale;
+    selectedID?: string;
+    mapClassName?: string;
+    tooltipClassName?: string;
     onRegionClick?: (value: Region) => void;
 }
 
 const MINUTES_IN_HOUR = 60;
+const MAP_SVG_ID = 'ru-map-russia-svg';
 const CLASS_NAME_HOVERED = 'ru-map-hovered';
 const CLASS_NAME_TOOLTIP = 'ru-map-tooltip';
 const CLASS_NAME_SELECTED = 'ru-map-selected';
@@ -47,6 +50,8 @@ export class RUMap {
     private mode: Mode = 'region';
     private locale: Locale = 'ru';
     private selected_id: string | null = null;
+    private mapClassName: string | null = null;
+    private tooltipClassName: string | null = null;
     private onRegionClick: ((value: Region) => void) | null = null;
 
     constructor (id: string, settings?: RUMapSettings) {
@@ -54,13 +59,19 @@ export class RUMap {
         
         if (settings?.mode) this.mode = settings.mode;
         if (settings?.locale) this.locale = settings.locale;
-        if (settings?.onRegionClick) this.onRegionClick = settings.onRegionClick;
         if (settings?.selectedID) this.selected_id = settings.selectedID;
+        if (settings?.mapClassName) this.mapClassName = settings.mapClassName;
+        if (settings?.onRegionClick) this.onRegionClick = settings.onRegionClick;
+        if (settings?.tooltipClassName) this.tooltipClassName = settings.tooltipClassName;
 
         if (this.root) {
             this.root.innerHTML = this.map;
 
             addRootStyles();
+
+            const svg = document.getElementById(MAP_SVG_ID);
+
+            if (this.mapClassName && svg) svg.classList.add(this.mapClassName);
   
             this.htmlRegions = this.root.getElementsByClassName(CLASS_NAME_REGION);
   
@@ -129,7 +140,11 @@ export class RUMap {
         this.tooltip.style.top = Math.round(rect.y + rect.height)+'px';
         this.tooltip.style.left = Math.round(rect.x + rect.width / 2)+'px';
 
-        this.tooltip.classList.add(CLASS_NAME_TOOLTIP);
+        if (this.tooltipClassName) {
+            this.tooltip.classList.add(this.tooltipClassName);
+        } else {
+            this.tooltip.classList.add(CLASS_NAME_TOOLTIP);
+        };
 
         document.body.appendChild(this.tooltip);
     }
@@ -224,7 +239,7 @@ function addRootStyles() {
     const css = `.${CLASS_NAME_REGION} { fill: lightgray; transition: 0.2s; } .${CLASS_NAME_REGION}:hover { fill: darkgray; }`;
     const cssTimezone = ` .${CLASS_NAME_HOVERED} { fill: darkgray; }`;
     const cssSelected = ` .${CLASS_NAME_SELECTED}{ fill: gray; }`;
-    const cssTooltip = ` .${CLASS_NAME_TOOLTIP} { padding: 4px; color: white; background-color: #212121; }`;
+    const cssTooltip = ` .${CLASS_NAME_TOOLTIP} { padding: 4px; color: white; background-color: #212121; font-size: 14px; }`;
 
     const style = document.createElement('style');
 
