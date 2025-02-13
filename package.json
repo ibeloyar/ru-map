@@ -1,7 +1,7 @@
 {
   "name": "ru-map",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A library containing a map component of Russia with the ability to choose: region, district or time zone",
   "keywords": [
     "ru-map",
