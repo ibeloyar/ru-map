@@ -27,6 +27,7 @@ Contains an svg map of Russia, with the following capabilities:
     - [Native](#Native)
     - [React](#React)
     - [Interface Region](#Interface-Region)
+    - [RUMap settings](#RUMap-settings)
 - [Development](#Development)
 - [Contributing](#Contributing)
 
@@ -101,6 +102,21 @@ export interface Region {
 }
 ```
 
+### RUMap settings
+The constructor takes the following settings as the second parameter:
+```typescript
+export interface RUMapSettings {
+    mode: Mode; // operating mode
+    locale?: Locale; // localization language
+    selectedID?: string; // default selected region
+    mapClassName?: string; // class name for the map
+    tooltipClassName?: string; // class name for tooltip
+    onRegionClick?: (value: Region) => void; // region click handler
+}
+```
+> [!IMPORTANT]
+> The presence of the tooltipClassName class disables the default tooltip styling
+
 ## Development
 
 ### Requirements
@@ -131,13 +147,26 @@ Thank you for taking the time to read our rules for contributing to ru-map. You 
 
 Our open source community strives to be pleasant, welcoming, and professional. Abusive, harassing or otherwise inappropriate behavior will not be tolerated.
 
-### Pull Request
-* ru-map is written in ES6.
-* We use ESLint to test our code. You can use `npm run lint:fix` before submitting a pull request.
-* Please use a semantic commit message.
-
 ### Bugs
 * Before submitting a bug report, look for similar tickets. Your problem may have already been discussed and resolved.
 * Feel free to add comments to an existing issue, even if it is closed.
 * Be careful when choosing a title and report, do not miss important details.
 * In English, please.
+
+### Pull Request
+* ru-map is written in ES6.
+* We use ESLint to test our code. You can use `npm run lint:fix` before submitting a pull request.
+* Please use a semantic commit message.
+* Commit and PR Standards<br/>
+    We follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for consistency. <br/>
+    The available commit types are:
+
+    **feat:** New features (triggers a minor release).<br/>
+    **fix:** Bug fixes (triggers a patch release).<br/>
+    **refactor:** Code structure changes without affecting functionality.<br/>
+    **perf:** Performance improvements.<br/>
+    **build:** Changes to the build system or dependencies.<br/>
+    **chore:** Miscellaneous tasks that don’t modify source code or tests.<br/>
+    **ci:** Updates to CI configuration.<br/>
+    **docs:** Documentation updates.<br/>
+    **test:** Adding or updating tests.<br/>

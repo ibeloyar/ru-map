@@ -14,6 +14,16 @@
             display: flex;
             gap: 12px;
         }
+        .selected_region {
+            min-height: 200px;
+            margin: 0;
+        }
+        .test_class_for_tooltip {
+            color: white;
+            background-color: black;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -32,8 +42,10 @@
                 <option value="en">en</option>
             </select>
         </section>
-
+        
         <div id="ru-map-root" class="map"></div>
+
+        <pre class="selected_region" id="ru-map-selected-regeon"></pre>
     </main>
         
     <script type="module" src="./src/preview.ts"></script>
