@@ -27,6 +27,7 @@ Contains an svg map of Russia, with the following capabilities:
     - [Native](#Native)
     - [React](#React)
     - [Interface Region](#Interface-Region)
+    - [RUMap settings](#RUMap-settings)
 - [Development](#Development)
 - [Contributing](#Contributing)
 
@@ -100,6 +101,21 @@ export interface Region {
     timezoneOffset: number; // Смещение от UTC+0 в минутах
 }
 ```
+
+### RUMap settings
+The constructor takes the following settings as the second parameter:
+```typescript
+export interface RUMapSettings {
+    mode: Mode; // operating mode
+    locale?: Locale; // localization language
+    selectedID?: string; // default selected region
+    mapClassName?: string; // class name for the map
+    tooltipClassName?: string; // class name for tooltip
+    onRegionClick?: (value: Region) => void; // region click handler
+}
+```
+> [!IMPORTANT]
+> The presence of the tooltipClassName class disables the default tooltip styling
 
 ## Development
 
