@@ -124,10 +124,10 @@ export class RUMap {
     
         switch (this.mode) {
         case 'federal_district':
-            this.tooltip.innerText = this.dict[region.fd][this.locale];
+            this.tooltip.innerText = `${region.title[this.locale]}\n${this.dict[region.fd][this.locale]}`;
             break;
         case 'timezone':
-            this.tooltip.innerText = this.dict[region.tz][this.locale];
+            this.tooltip.innerText = `${region.title[this.locale]}\n${this.dict[region.tz][this.locale]}`;
             break;
         case 'region':
         default:
